@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmfz.dao.ProvinceDao">
+
+
+	<select id="selectAll" resultType="province">
+		SELECT id,name,code FROM  f_province
+	</select>
+
+    <select id="selectById" parameterType="String" resultType="province">
+        SELECT id,name,code FROM  f_province WHERE id=#{id}
+    </select>
+
+</mapper>

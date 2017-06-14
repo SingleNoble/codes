@@ -1,0 +1,144 @@
+[
+  {
+    "id": "21",
+    "name": "系统管理",
+    "iconCls": "icon-bullet_wrench",
+    "href": "",
+    "lev":"1",
+    "children": [
+      {
+        "id": "22",
+        "name": "系统日志",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      },
+      {
+        "id": "23",
+        "name": "清除缓存",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      },
+      {
+        "id": "24",
+        "name": "数据备份",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      },{
+        "id": "29",
+        "name": "用户反馈管理",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "name": "用户管理",
+    "iconCls": "icon-bullet_wrench",
+    "href": "",
+    "lev":"1",
+    "children": [
+      {
+        "id": "26",
+        "name": "前台用户管理",
+        "iconCls": "icon-database_yellow",
+        "href": "chiming/page/user/beforeUser.jsp",
+        "lev":"2"
+      },
+      {
+        "id": "27",
+        "name": "管理员管理",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      },
+      {
+        "id": "28",
+        "name": "上师管理",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "name": "图片管理",
+    "iconCls": "icon-bullet_wrench",
+    "href": "",
+    "lev":"1",
+    "children": [
+      {
+        "id": "31",
+        "name": "轮播图管理",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "name": "专辑管理",
+    "iconCls": "icon-bullet_wrench",
+    "href": "",
+    "lev":"1",
+    "children": [
+      {
+        "id": "33",
+        "name": "专辑列表",
+        "iconCls": "icon-database_yellow",
+        "href": "index.jsp",
+        "lev":"2"
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "name": "文章管理",
+    "iconCls": "icon-bullet_wrench",
+    "href": "",
+    "lev":"1",
+    "children": [
+      {
+        "id": "35",
+        "name": "上师言教",
+        "iconCls": "icon-01",
+        "href": "index.jsp",
+        "lev":"2"
+      },{
+        "id": "36",
+        "name": "显密法要",
+        "iconCls": "icon-01",
+        "href": "index.jsp",
+        "lev":"2"
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "name": "功课管理",
+    "iconCls": "icon-bullet_wrench",
+    "href": "",
+    "lev":"1",
+    "children": [
+      {
+        "id": "38",
+        "name": "默认功课管理",
+        "iconCls": "icon-01",
+        "href": "index.jsp",
+        "lev":"2"
+      },{
+        "id": "36",
+        "name": "用户功课管理",
+        "iconCls": "icon-01",
+        "href": "index.jsp",
+        "lev":"2"
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmfz.dao.MenuDao">
+
+
+	<resultMap id="menuMap" type="menu">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="iconCls" property="iconCls"/>
+		<result column="href" property="href"/>
+		<result column="lev" property="lev"/>
+
+		<collection property="children" javaType="List" ofType="menu"
+					select="com.cmfz.dao.MenuDao.selectByParentId" column="id"/>
+	</resultMap>
+	<select id="selectByLev" resultMap="menuMap">
+		SELECT id,name,iconCls,href,lev FROM f_menu WHERE lev='1'
+	</select>
+	<select id="selectByParentId" parameterType="String" resultType="menu">
+		SELECT id,name,iconCls,href,lev FROM f_menu WHERE pid=#{id}
+	</select>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmfz.dao.RotationDao">
+
+	<select id="selectAll" resultType="rotation">
+		SELECT id,description,filepath FROM f_rotation
+	</select>
+
+	<select id="selectFive" resultType="rotation">
+		SELECT id,description,filepath FROM f_rotation limit 0,5
+	</select>
+
+	<!--查询一个-->
+	<select id="selectById" parameterType="String" resultType="rotation">
+		SELECT id,description,filepath FROM f_rotation WHERE id=#{id}
+	</select>
+
+	<insert id="insert" parameterType="rotation">
+        INSERT INTO f_rotation VALUES (#{id},#{description},#{filepath})
+    </insert>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM f_rotation WHERE id=#{id}
+	</delete>
+
+</mapper>
