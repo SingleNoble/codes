@@ -45,14 +45,14 @@
         }
     </script>
 </head>
-<body>
+    <body>
     <div id="cc" class="easyui-layout" data-options="fit:true" style="width:600px;height:400px;">
         <div data-options="region:'north'" style="height:60px;">
             <a id="user" onclick="showuser()" class="easyui-linkbutton" data-options="plain:true"></a>
             <h1 style="text-align: center">持名法州后台管理系统</h1>
         </div>
         <div data-options="region:'south'" style="height:60px;"></div>
-        <div data-options="region:'west',title:'导航',iconCls:'icon-2012080404391'" style="width:260px;">
+        <div data-options="region:'west',title:'导航'" style="width:260px;">
             <div id="menus" class="easyui-accordion" data-options="fit:true">
 
             </div>
@@ -61,5 +61,5 @@
             <div id="tabs" class="easyui-tabs" data-options="fit:true"></div>
         </div>
     </div>
-</body>
+    </body>
 </html>

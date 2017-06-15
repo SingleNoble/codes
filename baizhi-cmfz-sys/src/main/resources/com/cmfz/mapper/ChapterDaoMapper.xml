@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmfz.dao.ChapterDao">
+
+    <resultMap id="chapterMap" type="chapter">
+        <id column="id" property="id"/>
+        <result column="oldname" property="oldName"/>
+        <result column="newname" property="newName"/>
+        <result column="filepath" property="filePath"/>
+        <result column="filesize" property="fileSize"/>
+        <result column="contenttype" property="contentType"/>
+        <association property="album" javaType="album"
+                     select="com.cmfz.dao.AlbumDao.selectById" column="albumid"/>
+    </resultMap>
+    <select id="selectByAlbumId" parameterType="String" resultMap="chapterMap">
+        SELECT id,oldName,newName,filePath,fileSize,contentType,albumid FROM f_chapter WHERE albumid=#{id}
+    </select>
+    <select id="selectById" parameterType="String" resultMap="chapterMap">
+        SELECT id,oldName,newName,filePath,fileSize,contentType,albumid WHERE id=#{id}
+    </select>
+    <insert id="update" parameterType="chapter">
+        UPDATE f_chapter SET id=#{id},oldname=#{oldName},newname=#{newName},filepath=#{filePath},filesize=#{fileSize},contenttype=#{contentType},albumid=#{album.id} WHERE id=#{id}
+    </insert>
+    <delete id="delete" parameterType="chapter">
+        DELETE FROM f_chapter WHERE id=#{id}
+    </delete>
+    <insert id="insert" parameterType="chapter">
+        INSERT INTO f_chapter VALUES (#{id},#{oldName},#{newName},#{filePath},#{fileSize},#{contentType},#{album.id})
+    </insert>
+
+
+</mapper>

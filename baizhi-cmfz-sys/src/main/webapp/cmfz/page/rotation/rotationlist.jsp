@@ -16,10 +16,10 @@
             pageSize:2,
             fitColumns:true,
             columns:[[
-                {field:"id",title:"编号",width:80},
-                {field:"description",title:"描述",width:80},
-                {field:"filepath",title:"路径",width:80},
-                {field:"o",title:"操作",width:80,
+                {field:"id",title:"编号",width:100,align:'center'},
+                {field:"description",title:"描述",width:80,align:'center'},
+                {field:"filepath",title:"路径",width:150,align:'center'},
+                {field:"o",title:"操作",width:50,align:'center',
                     formatter:function (value,row,index) {
                         var id=row.id;
                         return "<a class='del' onClick=\"drop('"+ id +"')\" href='javascript:;'>[删除]</a>";

@@ -2,15 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cmfz.dao.MasterDao">
 
+	<select id="selectAll" resultType="master">
+		SELECT id,realname,nickname,imgpath FROM f_master
+	</select>
 
-	<!--添加上师-->
 	<insert id="insert" parameterType="master">
-		insert into f_master VALUES (#{id},#{realname},#{nickname},#{imgpath})
+		INSERT INTO f_master VALUES (#{id},#{realname},#{nickname},#{imgpath})
 	</insert>
 
-	<!--查询所有-->
-	<select id="selectAll" resultType="master">
-		select id,realname,nickname,imgpath FROM f_master
+	<select id="selectById" parameterType="String" resultType="master">
+		SELECT id,realname,nickname,imgpath FROM f_master WHERE id=#{id}
 	</select>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM f_master WHERE id=#{id}
+	</delete>
+
+	<update id="update" parameterType="master">
+		UPDATE f_master set realname=#{realname},nickname=#{nickname},imgpath=#{imgpath} WHERE id=#{id}
+	</update>
 
 </mapper>

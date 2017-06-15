@@ -28,10 +28,10 @@
 
     </style>
 </head>
-<body>
+<body bgcolor="#b0c4de">
     <div style="text-align: center;margin-top: 50px;">
         <h1>持名法州后台管理系统登录</h1>
-        <div style="margin-top: 200px;width: 300px;height: 200px;margin-left: 500px">
+        <div style="margin-top: 100px;margin-left: 450px;width: 400px;height: 300px;">
             <form action="${appName}/cmfz/page/main/main.jsp" method="post" id="login">
                 <div style="margin-bottom: 10px">
                     <span>用户名:</span>

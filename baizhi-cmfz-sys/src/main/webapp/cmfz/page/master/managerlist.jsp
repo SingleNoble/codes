@@ -19,13 +19,12 @@
             pageSize:4,
             pageList:[2,4,6,8,10],
             columns:[[
-                {title:"编号",field:"id",width:100,align:'center'},
+                {title:"编号",field:"id",width:300,align:'center'},
                 {title:"姓名",field:"name",width:100,align:'center'},
-                {title:"手机号",field:"phone",width:100,align:'center'},
-                {title:"操作",field:"options",width:200,align:'center',
+                {title:"手机号",field:"phone",width:150,align:'center'},
+                {title:"操作",field:"options",width:100,align:'center',
                     formatter:function(value,row,index){
-                        return  "<a class='del' onClick=\"del('"+ row.id +"')\" href='javascript:;'>删除</a>&nbsp;&nbsp;" +
-                                "<a class='edit' onClick=\"editRow('"+ row.id +"')\"  href='javascript:;'>编辑</a>";
+                        return  "<a class='del' onClick=\"del('"+ row.id +"')\" href='javascript:;'>删除</a>";
                     }
                 }
             ]],
@@ -71,10 +70,6 @@
                     plain:true,
                     iconCls:'icon-remove',
                 });
-                $(".edit").linkbutton({
-                    plain:true,
-                    iconCls:'icon-edit',
-                });
             }
         });
 
@@ -102,5 +97,4 @@
 <table class="easyui-datagrid" id="managerdata"></table>
 <%--添加管理员--%>
 <div id="addManager"></div>
-<%--编辑--%>
-<div id="editManager"></div>
+
