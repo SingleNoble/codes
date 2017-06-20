@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>baizhi-parent</artifactId>
+        <groupId>com.cmfz</groupId>
+        <version>1.0-RELEASE</version>
+        <relativePath>../baizhi-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>baizhi-cmfz-service</artifactId>
+    <packaging>war</packaging>
+    <name>baizhi-cmfz-service Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <!--依赖commons-->
+        <dependency>
+            <groupId>com.cmfz</groupId>
+            <artifactId>baizhi-commons</artifactId>
+            <version>1.0-RELEASE</version>
+        </dependency>
+        <!--依赖system-->
+        <dependency>
+            <groupId>com.cmfz</groupId>
+            <artifactId>baizhi-cmfz-sys</artifactId>
+            <version>1.0-RELEASE</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>baizhi-cmfz-service</finalName>
+    </build>
+</project>

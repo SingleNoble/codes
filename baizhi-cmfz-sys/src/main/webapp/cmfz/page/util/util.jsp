@@ -5,6 +5,11 @@
 <script type="text/javascript" src="${appName}/cmfz/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="${appName}/cmfz/static/js/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${appName}/cmfz/static/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${appName}/cmfz/editor/kindeditor.js"></script>
+<script type="text/javascript" src="${appName}/cmfz/editor/kindeditor-common.js"></script>
+<script type="text/javascript" src="${appName}/cmfz/editor/lang/zh_CN.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="${appName}/cmfz/static/css/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="${appName}/cmfz/static/css/themes/icon.css">
 <link rel="stylesheet" type="text/css" href="${appName}/cmfz/static/css/IconExtension.css">

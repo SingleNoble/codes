@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.CounterDAO">
+    <select id="selectByLid" resultType="counter">
+        SELECT id,name,num,createdate FROM f_counter WHERE lessonid=#{lid} AND userid=#{uid}
+    </select>
+    <delete id="delete" parameterType="counter">
+        DELETE FROM f_counter WHERE id=#{id}
+    </delete>
+    <update id="update" parameterType="counter">
+        UPDATE f_counter SET num=#{num} WHERE id=#{id}
+    </update>
+    <insert id="insert" parameterType="counter">
+        INSERT INTO f_counter VALUES (#{id},#{name},#{num},#{createdate},#{lesson.id},#{user.id})
+    </insert>
+</mapper>

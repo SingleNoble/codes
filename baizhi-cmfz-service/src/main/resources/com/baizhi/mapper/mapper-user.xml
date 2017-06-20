@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.UserDAO">
+    <resultMap id="userMap" type="user">
+        <id column="id" property="id"/>
+        <result column="realname" property="realname"/>
+        <result column="nickname" property="nickname"/>
+        <result column="sex" property="sex"/>
+        <result column="description" property="description"/>
+        <result column="phone" property="phone"/>
+        <result column="imgpath" property="imgpath"/>
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+
+        <association property="master" javaType="master"
+                     select="com.baizhi.dao.MasterDAO.selectById" column="masterid"/>
+        <association property="province" javaType="province"
+                     select="com.baizhi.dao.ProvinceDAO.selectById" column="provinceid"/>
+        <association property="city" javaType="city"
+                     select="com.baizhi.dao.CityDAO.selectById" column="cityid"/>
+
+    </resultMap>
+
+    <!--<select id="selectAll" resultMap="userMap">
+        SELECT id,realname,nickname,sex,description,phone,password,salt,imgpath,masterid,provinceid,cityid from f_user
+    </select>-->
+    <!--<delete id="delete" parameterType="String">
+        delete from f_user where id=#{id}
+    </delete>-->
+
+    <update id="update" parameterType="user">
+        update f_user set realname=#{realname},nickname=#{nickname},sex=#{sex},description=#{description},phone=#{phone},imgpath=#{imgpath},provinceid=#{province.id},cityid=#{city.id} where id=#{id}
+    </update>
+    <update id="updateByPassword" parameterType="user">
+        update f_user set password=#{password},salt=#{salt} where id=#{id}
+    </update>
+    <insert id="insert" parameterType="user">
+        insert into f_user values(#{id},#{realname},#{nickname},#{sex},#{description},#{password},#{salt},#{phone},#{imgpath},#{master.id},#{province.id},#{city.id})
+    </insert>
+    <select id="selectById" parameterType="String" resultType="user">
+        select id,realname,nickname,sex,description,password,salt,phone,imgpath,masterid,provinceid,cityid from f_user where id=#{id}
+    </select>
+    <select id="selectByPhone" parameterType="String" resultType="user">
+        select id,realname,nickname,sex,description,password,salt,phone,imgpath,masterid,provinceid,cityid from f_user where phone=#{phone}
+    </select>
+    <select id="selectFiveUser" resultType="user">
+        select id,realname,nickname,sex,description,password,salt,phone,imgpath,masterid,provinceid,cityid from f_user ORDER BY rand() limit 0,5
+    </select>
+</mapper>

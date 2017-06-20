@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.LessonDAO">
+	<select id="selectDefaultLesson" resultType="lesson">
+        SELECT id,name,type FROM f_lesson WHERE type='0'
+    </select>
+    <insert id="insert" parameterType="lesson">
+        INSERT INTO f_lesson VALUES (#{id},#{name},#{type},#{user.id})
+    </insert>
+    <delete id="delete" parameterType="String">
+        DELETE FROM f_lesson WHERE id=#{id}
+    </delete>
+    <select id="selectByUserId" parameterType="String" resultType="lesson">
+        SELECT id,name,type FROM f_lesson WHERE userid=#{id}
+    </select>
+    <select id="selectById" parameterType="String" resultType="lesson">
+        SELECT id,name,type FROM f_lesson WHERE id=#{id}
+    </select>
+</mapper>

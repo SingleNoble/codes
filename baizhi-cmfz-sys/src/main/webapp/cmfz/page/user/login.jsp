@@ -29,24 +29,27 @@
     </style>
 </head>
 <body bgcolor="#b0c4de">
-    <div style="text-align: center;margin-top: 50px;">
-        <h1>持名法州后台管理系统登录</h1>
-        <div style="margin-top: 100px;margin-left: 450px;width: 400px;height: 300px;">
-            <form action="${appName}/cmfz/page/main/main.jsp" method="post" id="login">
-                <div style="margin-bottom: 10px">
-                    <span>用户名:</span>
-                    <input id="username" name="name" type="text" class="easyui-textbox" data-options="required:true,iconCls:'icon-man'"/><br/>
+        <div style="font-family:宋体 ;margin-top: 10px;text-align: center;width: 100%;height: 16%">
+            <h1>持明法洲后台管理系统</h1>
+        </div>
+        <hr/>
+        <div style="text-align: center;">
+            <form  action="${pageContext.request.contextPath}/manager/check" method="post">
+
+                <div style="width: 20%;height: 10%">
+
+                </div>
+                <div style="margin: 20px 0px 10px 0px">
+                    姓 名:<input class="easyui-textbox" type="text" name="name" data-options="required:true" />
+                </div>
+                <div style="margin: 10px 0px 5px 0px">
+                    密 码:<input class="easyui-passwordbox" type="text" name="password" data-options="required:true" />
                 </div>
                 <div>
-                    <span>密&nbsp;&nbsp;&nbsp;码:</span>
-                    <input id="password"  name="password" type="password" class="easyui-passwordbox" data-options="required:true"/>
+                    <input type="submit"  class="easyui-linkbutton" data-options="width:60,height:25" value="登陆"/>
                 </div>
-                <div style="margin-top: 20px">
-                    <%--<a  onclick="submit()" id="lbtn" class="easyui-linkbutton"></a>--%>
-                    <input type="submit" value="登录" />
-                </div>
+
             </form>
         </div>
-    </div>
-</body>
+    </body>
 </html>

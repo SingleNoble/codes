@@ -16,12 +16,10 @@ public class User implements Serializable {
     private String salt;
     private String phone;
     private String imgpath;
-
-    /*关系属性*/
+    //关系属性
     private Master master;
     private Province province;
     private City city;
-
 
     public User() {
     }

@@ -39,6 +39,13 @@ public class MasterController {
         map.put("rows",result);
         return map;
     }
+
+    //查所有
+    @RequestMapping("/query")
+    @ResponseBody
+    public List<Master> query(){
+        return masterService.sellect();
+    }
     /*添加上师*/
     @ResponseBody
     @RequestMapping("/add")

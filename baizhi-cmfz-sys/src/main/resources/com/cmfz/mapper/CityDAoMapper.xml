@@ -3,9 +3,12 @@
 <mapper namespace="com.cmfz.dao.CityDao">
 
 
+	<select id="selectAll" resultType="city">
+		SELECT id,name,code FROM  f_city
+	</select>
 
-    <select id="selectByCode" parameterType="String" resultType="city">
-        SELECT id,name,code,provinceid FROM  f_city WHERE provinceid=#{code}
-    </select>
+	<select id="selectById" parameterType="String" resultType="city">
+		SELECT id,name,code FROM  f_city WHERE id=#{id}
+	</select>
 
 </mapper>

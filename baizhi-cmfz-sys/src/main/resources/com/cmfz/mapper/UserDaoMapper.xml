@@ -2,11 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cmfz.dao.UserDao">
 
+    <resultMap id="userMap" type="user">
+        <id column="id" property="id"/>
+        <result column="realname" property="realname"/>
+        <result column="nickname" property="nickname"/>
+        <result column="sex" property="sex"/>
+        <result column="description" property="description"/>
+        <result column="phone" property="phone"/>
+        <result column="imgpath" property="imgpath"/>
+        <association property="master" javaType="master"
+                     select="com.cmfz.dao.MasterDao.selectById" column="masterid"/>
+        <association property="province" javaType="province"
+                     select="com.cmfz.dao.ProvinceDao.selectById" column="provinceid"/>
+        <association property="city" javaType="city"
+                     select="com.cmfz.dao.CityDao.selectById" column="cityid"/>
 
+    </resultMap>
+
+    <select id="selectAll" resultMap="userMap">
+        select id,realname,nickname,sex,description,password,salt,phone,imgpath,masterid,provinceid,cityid from f_user
+    </select>
+    <delete id="delete" parameterType="String">
+        delete from f_user where id=#{id}
+    </delete>
 
     <select id="selectById" parameterType="String" resultType="user">
-        SELECT id,realname,nickname,sex,description,password,salt,phone,imgpath,masterid,provinceid,cityid
-         FROM f_user WHERE id=#{id}
+        select id,realname,nickname,sex,description,password,salt,phone,imgpath,masterid,provinceid,cityid from f_user WHERE id=#{id}
     </select>
 
 </mapper>

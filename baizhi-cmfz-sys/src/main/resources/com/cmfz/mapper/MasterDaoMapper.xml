@@ -3,23 +3,20 @@
 <mapper namespace="com.cmfz.dao.MasterDao">
 
 	<select id="selectAll" resultType="master">
-		SELECT id,realname,nickname,imgpath FROM f_master
-	</select>
-
-	<insert id="insert" parameterType="master">
-		INSERT INTO f_master VALUES (#{id},#{realname},#{nickname},#{imgpath})
-	</insert>
-
-	<select id="selectById" parameterType="String" resultType="master">
-		SELECT id,realname,nickname,imgpath FROM f_master WHERE id=#{id}
+		select id,realname,nickname,imgpath from f_master
 	</select>
 
 	<delete id="delete" parameterType="String">
-		DELETE FROM f_master WHERE id=#{id}
+		delete from f_master where id=#{id}
 	</delete>
-
+	<insert id="insert" parameterType="master">
+		insert into f_master values(#{id},#{realname},#{nickname},#{imgpath})
+	</insert>
+	<select id="selectById" parameterType="String" resultType="master">
+		select id,realname,nickname,imgpath from f_master where id=#{id}
+	</select>
 	<update id="update" parameterType="master">
-		UPDATE f_master set realname=#{realname},nickname=#{nickname},imgpath=#{imgpath} WHERE id=#{id}
+		update f_master set realname=#{realname},nickname=#{nickname},imgpath=#{imgpath} where id=#{id}
 	</update>
 
 </mapper>

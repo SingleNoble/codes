@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 import java.util.UUID;
 
 @Service("masterService")
@@ -24,6 +26,7 @@ public class MasterServiceImpl implements MasterService {
 
         Page<Master> pages = PageHelper.startPage(page, rows);
         masterDao.selectAll();
+
         return pages;
     }
 
@@ -32,6 +35,7 @@ public class MasterServiceImpl implements MasterService {
             master.setId(UUID.randomUUID().toString());
         }
         masterDao.insert(master);
+
     }
 
     public Master queryById(String id) {
@@ -48,4 +52,9 @@ public class MasterServiceImpl implements MasterService {
     }
 
 
+    /*文章管理时查询master*/
+    public List<Master> sellect(){
+        List<Master> masters = masterDao.selectAll();
+        return masters;
+    }
 }
